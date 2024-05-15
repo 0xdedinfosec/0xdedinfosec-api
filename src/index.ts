@@ -46,6 +46,10 @@ const rateLimiter = async (c: RequestT, next: Next) => {
 app.use('*', rateLimiter);
 
 app.get('/', (c) => {
+    c.header(
+        'Cache-Control',
+        'public, s-maxage=86400, stale-while-revalidate=43200'
+    );
     return c.json({
         success: true,
         err: false,
