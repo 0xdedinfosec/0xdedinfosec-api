@@ -5,12 +5,18 @@ compatibility_date = "2023-12-01"
 [env.dev]
 vars = { ENVIRONMENT = "development" }
 
+[[env.dev.unsafe.bindings]]
+name = "RATE_LIMITER"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 50, period = 10 }
+
 # Production environment
 [env.production]
 name = "0xdedinfosec-api"
 vars = { ENVIRONMENT = "production" }
 
-[[unsafe.bindings]]
+[[env.production.unsafe.bindings]]
 name = "RATE_LIMITER"
 type = "ratelimit"
 namespace_id = "1001"
