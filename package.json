@@ -1,0 +1,22 @@
+{
+  "name": "0xdedinfosec-api",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts --env production",
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx custom-migration.ts",
+    "up": "drizzle-kit up"
+  },
+  "dependencies": {
+    "@elithrar/workers-hono-rate-limit": "^0.4.3",
+    "@libsql/client": "^0.6.0",
+    "drizzle-orm": "^0.30.10",
+    "hono": "^4.3.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240512.0",
+    "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.21.2",
+    "wrangler": "^3.56.0"
+  }
+}
